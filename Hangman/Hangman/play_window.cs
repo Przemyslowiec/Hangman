@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,39 +13,86 @@ namespace Hangman
 {
     public partial class play_window : Form
     {
+        private static int how_much_letters;
+        private string pattern;
+        private string test;
+        private Random random;
+        private string[] t;
+
         public play_window()
         {
             InitializeComponent();
+            pattern = "";
+            random = new Random(Guid.NewGuid().GetHashCode());
+            how_much_letters = 10;
+            t = File.ReadAllLines(@"D:\Programy\Repozytorium\Hangman\Hangman\Hangman\animals.txt");
         }
-        string test = "Tesqt - tqext";
 
-
-        private void funk(string s)
+        private void message_box(string message, string title)
         {
-            textBox.Text = "";
-            for (int i = 0; i < test.Length; i++)
+           // string message = " You lose! \n Play agian?";
+            //string title = "Game state:";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(message, title, buttons);
+            if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                if (test[i].ToString().ToLower() == s.ToLower())
+                this.Close();
+                how_much_letters = 10;
+            }
+            else
+            {
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+            }
+
+        }
+
+        private void change_string_check_letter(string s)
+        {
+            string tekst_aktualny = textBox.Text;
+            string gotowe = "";
+
+            for (int i = 0; i<pattern.Length; i++)
+            {
+                if (tekst_aktualny[i] =='_')
                 {
-                    textBox.Text += s.ToLower();
-                }
-                else
-                {
-                    if (test[i].ToString() == "-")
+                    if (pattern[i].ToString().ToUpper() == s.ToUpper())
                     {
-                        textBox.Text += "-";
+                        gotowe += s.ToUpper();
                     }
                     else
                     {
-                        textBox.Text += "_";
+                        gotowe += "_";
                     }
                 }
-                
-                textBox.Text += " ";
+                else
+                {
+                    gotowe += tekst_aktualny[i];
+                }
             }
+            if(tekst_aktualny == gotowe)
+            {
+                --how_much_letters;
+            }
+            if (how_much_letters == 0)
+            {
+                message_box(" You lose! \n Play agian?", "Game state:");
+            }
+            textBox.Text = gotowe;
+            if (pattern.ToString().ToUpper() == gotowe.ToUpper())
+            {
+                message_box(" You win! \n Play agian?", "Game state:");
+            }
+
+            letters_texbox.Text = "You have: " + how_much_letters.ToString() + " letters";
         }
+
+
         private void play_window_Load(object sender, EventArgs e)
         {
+            test = t[random.Next(0,t.Length)];
+            System.Console.Write(test);
+            letters_texbox.Text = "You have: " + how_much_letters.ToString() + " letters";
             for (int i = 0; i < test.Length; i++)
             {
                 if (test[i] != ' ')
@@ -52,167 +100,150 @@ namespace Hangman
                     if (test[i] == '-')
                     {
                         textBox.Text += "- ";
+                        pattern += "- ";
                     }
-                    textBox.Text += "_ ";
+                    else
+                    {
+                        textBox.Text += "_ ";
+                        pattern += test[i]+" ";
+                    }
                 }
                 else
                 {
                     textBox.Text += "   ";
+                    pattern += "   ";
                 }
             }
         }
 
         private void q_button_Click(object sender, EventArgs e)
         {
-            funk(q_button.Text.ToString());
+            change_string_check_letter(q_button.Text.ToString());
         }
 
         private void w_button_Click(object sender, EventArgs e)
         {
-            funk(w_button.Text.ToString());
+            change_string_check_letter(w_button.Text.ToString());
         }
 
         private void e_button_Click(object sender, EventArgs e)
         {
-            funk(e_button.Text.ToString());
+            change_string_check_letter(e_button.Text.ToString());
         }
 
         private void r_button_Click(object sender, EventArgs e)
         {
-            funk(r_button.Text.ToString());
-
+            change_string_check_letter(r_button.Text.ToString());
         }
 
         private void t_button_Click(object sender, EventArgs e)
         {
-            funk(t_button.Text.ToString());
-
+            change_string_check_letter(t_button.Text.ToString());
         }
 
         private void y_button_Click(object sender, EventArgs e)
         {
-            funk(y_button.Text.ToString());
-
+            change_string_check_letter(y_button.Text.ToString());
         }
 
         private void u_button_Click(object sender, EventArgs e)
         {
-            funk(u_button.Text.ToString());
-
+            change_string_check_letter(u_button.Text.ToString());
         }
 
         private void i_button_Click(object sender, EventArgs e)
         {
-            funk(i_button.Text.ToString());
-
+            change_string_check_letter(i_button.Text.ToString());
         }
 
         private void o_button_Click(object sender, EventArgs e)
         {
-            funk(o_button.Text.ToString());
-
+            change_string_check_letter(o_button.Text.ToString());
         }
 
         private void p_button_Click(object sender, EventArgs e)
         {
-            funk(p_button.Text.ToString());
-
+            change_string_check_letter(p_button.Text.ToString());
         }
 
         private void a_button_Click(object sender, EventArgs e)
         {
-            funk(a_button.Text.ToString());
-
+            change_string_check_letter(a_button.Text.ToString());
         }
 
         private void s_button_Click(object sender, EventArgs e)
         {
-            funk(s_button.Text.ToString());
-
+            change_string_check_letter(s_button.Text.ToString());
         }
 
         private void d_button_Click(object sender, EventArgs e)
         {
-            funk(d_button.Text.ToString());
-
+            change_string_check_letter(d_button.Text.ToString());
         }
 
         private void f_button_Click(object sender, EventArgs e)
         {
-            funk(f_button.Text.ToString());
-
+            change_string_check_letter(f_button.Text.ToString());
         }
 
         private void g_button_Click(object sender, EventArgs e)
         {
-            funk(g_button.Text.ToString());
-
+            change_string_check_letter(g_button.Text.ToString());
         }
 
         private void h_button_Click(object sender, EventArgs e)
         {
-            funk(h_button.Text.ToString());
-
+            change_string_check_letter(h_button.Text.ToString());
         }
 
         private void j_button_Click(object sender, EventArgs e)
         {
-            funk(j_button.Text.ToString());
-
+            change_string_check_letter(j_button.Text.ToString());
         }
 
         private void k_button_Click(object sender, EventArgs e)
         {
-            funk(k_button.Text.ToString());
-
+            change_string_check_letter(k_button.Text.ToString());
         }
 
         private void l_button_Click(object sender, EventArgs e)
         {
-            funk(l_button.Text.ToString());
-
+            change_string_check_letter(l_button.Text.ToString());
         }
 
         private void z_button_Click(object sender, EventArgs e)
         {
-            funk(z_button.Text.ToString());
-
+            change_string_check_letter(z_button.Text.ToString());
         }
 
         private void x_button_Click(object sender, EventArgs e)
         {
-            funk(x_button.Text.ToString());
-
+            change_string_check_letter(x_button.Text.ToString());
         }
 
         private void c_button_Click(object sender, EventArgs e)
         {
-            funk(c_button.Text.ToString());
-
+            change_string_check_letter(c_button.Text.ToString());
         }
 
         private void v_button_Click(object sender, EventArgs e)
         {
-            funk(v_button.Text.ToString());
-
+            change_string_check_letter(v_button.Text.ToString());
         }
 
         private void b_button_Click(object sender, EventArgs e)
         {
-            funk(b_button.Text.ToString());
-
+            change_string_check_letter(b_button.Text.ToString());
         }
 
         private void n_button_Click(object sender, EventArgs e)
         {
-            funk(n_button.Text.ToString());
-
+            change_string_check_letter(n_button.Text.ToString());
         }
 
         private void m_button_Click(object sender, EventArgs e)
         {
-            funk(m_button.Text.ToString());
-
+            change_string_check_letter(m_button.Text.ToString());
         }
     }
 }

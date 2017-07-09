@@ -8,3 +8,13 @@ D:\Programy\C#\Hangman\Hangman\obj\Debug\Hangman.Properties.Resources.resources
 D:\Programy\C#\Hangman\Hangman\obj\Debug\Hangman.csproj.GenerateResource.Cache
 D:\Programy\C#\Hangman\Hangman\obj\Debug\Hangman.exe
 D:\Programy\C#\Hangman\Hangman\obj\Debug\Hangman.pdb
+D:\Programy\Repozytorium\Hangman\Hangman\Hangman\bin\Debug\Hangman.exe.config
+D:\Programy\Repozytorium\Hangman\Hangman\Hangman\obj\Debug\Hangman.exe
+D:\Programy\Repozytorium\Hangman\Hangman\Hangman\obj\Debug\Hangman.pdb
+D:\Programy\Repozytorium\Hangman\Hangman\Hangman\bin\Debug\Hangman.exe
+D:\Programy\Repozytorium\Hangman\Hangman\Hangman\bin\Debug\Hangman.pdb
+D:\Programy\Repozytorium\Hangman\Hangman\Hangman\obj\Debug\Hangman.csprojResolveAssemblyReference.cache
+D:\Programy\Repozytorium\Hangman\Hangman\Hangman\obj\Debug\Hangman.main_window.resources
+D:\Programy\Repozytorium\Hangman\Hangman\Hangman\obj\Debug\Hangman.play_window.resources
+D:\Programy\Repozytorium\Hangman\Hangman\Hangman\obj\Debug\Hangman.Properties.Resources.resources
+D:\Programy\Repozytorium\Hangman\Hangman\Hangman\obj\Debug\Hangman.csproj.GenerateResource.Cache

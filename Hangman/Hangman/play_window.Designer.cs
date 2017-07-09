@@ -56,6 +56,7 @@
             this.w_button = new System.Windows.Forms.Button();
             this.q_button = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
+            this.letters_texbox = new System.Windows.Forms.TextBox();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -498,11 +499,19 @@
             this.textBox.Size = new System.Drawing.Size(493, 46);
             this.textBox.TabIndex = 1;
             // 
+            // letters_texbox
+            // 
+            this.letters_texbox.Location = new System.Drawing.Point(19, 314);
+            this.letters_texbox.Name = "letters_texbox";
+            this.letters_texbox.Size = new System.Drawing.Size(493, 22);
+            this.letters_texbox.TabIndex = 2;
+            // 
             // play_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 536);
+            this.Controls.Add(this.letters_texbox);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.groupBox);
             this.MaximumSize = new System.Drawing.Size(553, 583);
@@ -546,5 +555,6 @@
         private System.Windows.Forms.Button x_button;
         private System.Windows.Forms.Button z_button;
         private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.TextBox letters_texbox;
     }
 }
