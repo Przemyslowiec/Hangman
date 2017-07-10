@@ -12,19 +12,24 @@ namespace Hangman
 {
     public partial class main_window : Form
     {
+        private play_window window;
         public main_window()
         {
             InitializeComponent();
         }
 
-        private void main_window_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void play_button_Click(object sender, EventArgs e)
         {
-            play_window window = new play_window();
+            
+            if (animals_radio_button.Checked)
+            {
+                window = new play_window(@"D:\Programy\Repozytorium\Hangman\Hangman\Hangman\animals.txt");
+            }
+            if (countries_radio_button.Checked)
+            {
+                window = new play_window(@"D:\Programy\Repozytorium\Hangman\Hangman\Hangman\countries.txt");
+            }
+
             window.Show();
         }
     }
