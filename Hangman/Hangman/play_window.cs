@@ -98,7 +98,6 @@ namespace Hangman
         private void play_window_Load(object sender, EventArgs e)
         {
             test = t[random.Next(0,t.Length)];
-            System.Console.Write(test);
             letters_texbox.Text = "You have: " + how_much_letters.ToString() + " letters";
             for (int i = 0; i < test.Length; i++)
             {
@@ -161,160 +160,10 @@ namespace Hangman
                     break;
             }
         }
-        private void q_button_Click(object sender, EventArgs e)
+        private void button_click(object sender, EventArgs e)
         {
-            change_string_check_letter(q_button.Text.ToString());
-            q_button.BackColor = Color.Blue;
-        }
-
-        private void w_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(w_button.Text.ToString());
-            w_button.BackColor = Color.Blue;
-        }
-
-        private void e_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(e_button.Text.ToString());
-            e_button.BackColor = Color.Blue;
-        }
-
-        private void r_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(r_button.Text.ToString());
-            r_button.BackColor = Color.Blue;
-        }
-
-        private void t_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(t_button.Text.ToString());
-            t_button.BackColor = Color.Blue;
-        }
-
-        private void y_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(y_button.Text.ToString());
-            y_button.BackColor = Color.Blue;
-        }
-
-        private void u_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(u_button.Text.ToString());
-            u_button.BackColor = Color.Blue;
-        }
-
-        private void i_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(i_button.Text.ToString());
-            i_button.BackColor = Color.Blue;
-        }
-
-        private void o_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(o_button.Text.ToString());
-            o_button.BackColor = Color.Blue;
-        }
-
-        private void p_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(p_button.Text.ToString());
-            p_button.BackColor = Color.Blue;
-        }
-
-        private void a_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(a_button.Text.ToString());
-            a_button.BackColor = Color.Blue;
-        }
-
-        private void s_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(s_button.Text.ToString());
-            s_button.BackColor = Color.Blue;
-        }
-
-        private void d_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(d_button.Text.ToString());
-            d_button.BackColor = Color.Blue;
-        }
-
-        private void f_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(f_button.Text.ToString());
-            f_button.BackColor = Color.Blue;
-        }
-
-        private void g_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(g_button.Text.ToString());
-            g_button.BackColor = Color.Blue;
-        }
-
-        private void h_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(h_button.Text.ToString());
-            h_button.BackColor = Color.Blue;
-        }
-
-        private void j_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(j_button.Text.ToString());
-            j_button.BackColor = Color.Blue;
-        }
-
-        private void k_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(k_button.Text.ToString());
-            k_button.BackColor = Color.Blue;
-        }
-
-        private void l_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(l_button.Text.ToString());
-            l_button.BackColor = Color.Blue;
-        }
-
-        private void z_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(z_button.Text.ToString());
-            z_button.BackColor = Color.Blue;
-        }
-
-        private void x_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(x_button.Text.ToString());
-            x_button.BackColor = Color.Blue;
-        }
-
-        private void c_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(c_button.Text.ToString());
-            c_button.BackColor = Color.Blue;
-        }
-
-        private void v_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(v_button.Text.ToString());
-            v_button.BackColor = Color.Blue;
-        }
-
-        private void b_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(b_button.Text.ToString());
-            b_button.BackColor = Color.Blue;
-        }
-
-        private void n_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(n_button.Text.ToString());
-            n_button.BackColor = Color.Blue;
-        }
-
-        private void m_button_Click(object sender, EventArgs e)
-        {
-            change_string_check_letter(m_button.Text.ToString());
-            m_button.BackColor = Color.Blue;
+            change_string_check_letter((sender as Button).Text.ToString());
+            (sender as Button).BackColor = Color.Blue;
         }
 
     }
